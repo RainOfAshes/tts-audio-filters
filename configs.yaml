@@ -9,7 +9,7 @@ speech_enhancement:
   gain_type: '-n'
   pitch: 45
   new_sr: 48000
-  tempo: 1.08
+  tempo: 1.03
 
 
 speech_generation:
