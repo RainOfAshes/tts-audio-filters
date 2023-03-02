@@ -31,5 +31,5 @@ class TextToSpeech:
         return audio_tensor, sample_rate
 
     def __call__(self, text: str, language_symbol: str,
-                 apply_enhancement: bool) -> Tuple[torch.Tensor, int]:
+                 apply_enhancement: bool = True) -> Tuple[torch.Tensor, int]:
         return self.generate_enhanced_speech(text, language_symbol, apply_enhancement)

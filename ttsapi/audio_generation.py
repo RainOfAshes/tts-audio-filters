@@ -49,6 +49,9 @@ class SpeechGenerator:
         audio_tensor, sample_rate = self._read_audio_bytes(audio_bytes)
         return audio_tensor, sample_rate
 
+    def __call__(self, text: str, language_symbol: str) -> Tuple[torch.Tensor, int]:
+        return self.generate_audio(text, language_symbol)
+
 
 def load_speech_generator(configs_file_path: str = "configs.yaml"):
     with open(configs_file_path, "r") as f:
