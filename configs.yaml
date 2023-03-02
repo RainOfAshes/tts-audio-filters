@@ -3,11 +3,11 @@ speech_enhancement:
   save_pretrained_dir: "./speech-enhancement-model"
   device: "cuda"
   volume_gain: 1.1
-  fade_in_ratio: 0.30
-  fade_out_ratio: 0.5
+  fade_in_ratio: 0.25
+  fade_out_ratio: 0.25
   fade_shape: 'linear'
   gain_type: '-n'
-  pitch: 45
+  pitch: 30
   new_sr: 48000
   tempo: 1.03
 
