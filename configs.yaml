@@ -1,19 +1,19 @@
 speech_enhancement:
-  pretrained_model: "speechbrain/metricgan-plus-voicebank",
-  save_pretrained_dir: "./speech-enhancement-model",
-  device: "cuda",
-  volume_gain: 1.1,
-  fade_in_ratio: 0.30,
-  fade_out_ratio: 0.5,
-  fade_shape: 'linear',
-  gain_type: '-n',
-  pitch: 40,
-  new_sr: 48000,
+  pretrained_model: "speechbrain/metricgan-plus-voicebank"
+  save_pretrained_dir: "./speech-enhancement-model"
+  device: "cuda"
+  volume_gain: 1.1
+  fade_in_ratio: 0.30
+  fade_out_ratio: 0.5
+  fade_shape: 'linear'
+  gain_type: '-n'
+  pitch: 40
+  new_sr: 48000
   tempo: 1.15
 
 
 speech_generation:
-  tts_url: "https://65n1fnjut7.execute-api.eu-west-1.amazonaws.com/dev/v1/tts-api-manager",
+  tts_url: "https://65n1fnjut7.execute-api.eu-west-1.amazonaws.com/dev/v1/tts-api-manager"
   token_header_key: "x-api-key"
   token_variable_name: "TTS_TOKEN"
   sample_rate: 16000
