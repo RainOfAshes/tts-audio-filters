@@ -7,9 +7,9 @@ speech_enhancement:
   fade_out_ratio: 0.5
   fade_shape: 'linear'
   gain_type: '-n'
-  pitch: 40
+  pitch: 45
   new_sr: 48000
-  tempo: 1.15
+  tempo: 1.08
 
 
 speech_generation:
