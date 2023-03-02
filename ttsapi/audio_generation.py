@@ -53,4 +53,4 @@ class SpeechGenerator:
 def load_speech_generator(configs_file_path: str = "configs.yaml"):
     with open(configs_file_path, "r") as f:
         configs_dict = yaml.safe_load(f)
-    return SpeechGenerator(**configs_dict['speech_enhancement'])
+    return SpeechGenerator(**configs_dict['speech_generation'])
