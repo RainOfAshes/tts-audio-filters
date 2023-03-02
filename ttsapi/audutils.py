@@ -70,4 +70,4 @@ class SpeechEnhancer:
 def load_speech_enhancer(configs_file_path: str = "configs.yaml"):
     with open(configs_file_path, "r") as f:
         configs_dict = yaml.safe_load(f)
-    return SpeechEnhancer(**configs_dict['speech_generation'])
+    return SpeechEnhancer(**configs_dict['speech_enhancement'])
