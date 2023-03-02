@@ -2,10 +2,11 @@ import base64
 import io
 import os
 from typing import Tuple
-import yaml
+
 import requests
 import torch
 import torchaudio
+import yaml
 
 
 class SpeechGenerator:
