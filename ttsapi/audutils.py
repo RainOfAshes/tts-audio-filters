@@ -46,7 +46,8 @@ class SpeechEnhancer:
         ]
 
     def _enhance_speech(self, speech_tensor: torch.Tensor) -> torch.Tensor:
-        speech_tensor = speech_tensor.squeeze().to(self.device)
+        speech_tensor = speech_tensor.view(1, -1)
+        speech_tensor = speech_tensor.to(self.device)
         return self.model.enhance_batch(speech_tensor, lengths=torch.tensor([1.]))
 
     def _apply_sox_effects(self, speech_tensor: torch.Tensor, sample_rate: int) -> Tuple:
@@ -61,7 +62,7 @@ class SpeechEnhancer:
 
     @torch.inference_mode()
     def __call__(self, speech_tensor: torch.Tensor, sample_rate: int) -> Tuple[torch.Tensor, int]:
-        speech_tensor = self._enhance_speech(speech_tensor)
+        speech_tensor = self._enhance_speech(speech_tensor).cpu()
         speech_tensor, sample_rate = self._apply_sox_effects(speech_tensor, sample_rate)
         speech_tensor = self._apply_transforms(speech_tensor)
         return speech_tensor, sample_rate
